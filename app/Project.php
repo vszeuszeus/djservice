@@ -10,12 +10,12 @@ class Project extends Model
 
     public function files()
     {
-        return $this->hasMany('App\File');
+        return $this->hasMany('App\File', 'project_id');
     }
 
     public function user()
     {
-        $this->belongsTo('App\User');
+        $this->belongsTo('App\User', 'user_id');
     }
 
     public function getLatest(){
