@@ -15,10 +15,10 @@ class Project extends Model
 
     public function user()
     {
-        $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     public function getLatest(){
-        $this->with('user', 'files')->get();
+        return $this->with('user', 'files')->get();
     }
 }
